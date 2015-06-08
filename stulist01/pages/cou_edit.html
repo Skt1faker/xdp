@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %} 
+  修改课程信息
+{% end %}
+
+{% block content %} 
+	<a href="/coulist">返回课程清单</a>
+	<hr>
+	<form action="/couedit/{{course['cou_sn']}}" method="post">
+    课程号：<input type="text" name="cou_no" value="{{course['cou_no']}}"><br>
+    课程名：<input type="text" name="name" value="{{course['name']}}"> <br>
+    说  明：<input type="text" name="notes" value="{{course['notes'] if course['notes'] is not None else ''}}">
+    <input type="submit" value="提交">
+    </form>
+
+{% end %}
